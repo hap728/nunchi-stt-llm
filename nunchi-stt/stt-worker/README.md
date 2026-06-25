@@ -21,6 +21,19 @@ backend
 - 폴링 방식: worker가 `STT_PENDING`, `STT_REQUESTED`, `UPLOADED` 상태를 주기적으로 조회
 - 수동 방식: `run_worker.py` 또는 `run_schedule.py`로 특정 건 처리
 
+## 실행 환경
+
+GPU 기반 STT 처리는 RunPod L4 GPU 클라우드 환경에서 실행하는 구성을 기준으로 했습니다.
+
+```text
+Cloud GPU: RunPod NVIDIA L4
+STT Model: faster-whisper large-v3
+WHISPER_DEVICE=cuda
+WHISPER_COMPUTE_TYPE=float16
+```
+
+GPU 배포 시에는 `Dockerfile.gpu`를 사용할 수 있고, CPU 환경에서는 `WHISPER_DEVICE`와 `WHISPER_COMPUTE_TYPE` 값을 환경에 맞게 변경하면 됩니다.
+
 ## 파일 구성
 
 ```text

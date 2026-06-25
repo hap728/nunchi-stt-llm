@@ -36,6 +36,19 @@ NCP Object Storage
 - 긴 전사문 chunk 분리 및 overlap 처리
 - 일정 추출 결과 JSON 저장
 
+## 실행 환경
+
+STT 전사는 RunPod L4 GPU 클라우드 환경에서 GPU 기반으로 실행하는 구성을 기준으로 정리했습니다. Whisper 모델은 `large-v3`를 사용하고, GPU 추론을 위해 `WHISPER_DEVICE=cuda`, `WHISPER_COMPUTE_TYPE=float16` 설정을 사용합니다.
+
+```text
+Cloud GPU: RunPod NVIDIA L4
+STT Model: faster-whisper large-v3
+Device: cuda
+Compute Type: float16
+```
+
+GPU 환경에서는 `Dockerfile.gpu`를 사용할 수 있으며, 모델 파일은 `/models/faster-whisper` 경로에 준비되도록 구성했습니다.
+
 ## 디렉터리 구조
 
 ```text
