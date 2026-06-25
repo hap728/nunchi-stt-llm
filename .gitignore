@@ -1,0 +1,38 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.bak
+*.bak_*
+.venv/
+venv/
+
+# Local tooling
+.idea/
+.cache/
+
+# Models and large runtime data
+ollama_models/
+nunchi-stt/stt-worker/.venv/
+
+# Audio and dataset files
+nunchi-stt/test_audio/
+nunchi-stt/test_audio_noise/
+nunchi-stt/test_audio_real/
+nunchi-stt/원천데이터/
+nunchi-stt/라벨링데이터/
+
+# Generated experiment outputs
+nunchi-stt/pipeline_results/
+nunchi-stt/pipeline_results_real/
+nunchi-stt/compare_report_medium/
+nunchi-stt/compare_report_large-v3/
+nunchi-stt/text_compare_results/
+nunchi-stt/*_normalized*.txt
+nunchi-stt/result_*.txt
+nunchi-stt/schedule_*.json
+nunchi-stt/runtime_*.csv
